@@ -1,7 +1,7 @@
 import ist from "ist"
-import {handleInsertion, deleteBracketPair, closeBrackets} from "@codemirror/next/closebrackets"
-import {EditorState, EditorSelection, StateCommand} from "@codemirror/next/state"
-import {StreamLanguage} from "@codemirror/next/stream-parser"
+import {handleInsertion, deleteBracketPair, closeBrackets} from "@codemirror/closebrackets"
+import {EditorState, EditorSelection, StateCommand} from "@codemirror/state"
+import {StreamLanguage} from "@codemirror/stream-parser"
 
 function s(doc = "", anchor = 0, head = anchor) {
   return EditorState.create({doc, selection: EditorSelection.single(anchor, head), extensions: closeBrackets()})
