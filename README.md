@@ -1,8 +1,8 @@
-# @codemirror/closebrackets
+# @codemirror/closebrackets [![NPM version](https://img.shields.io/npm/v/@codemirror/closebrackets.svg)](https://www.npmjs.org/package/@codemirror/closebrackets)
 
-[ [![NPM version](https://img.shields.io/npm/v/@codemirror/next.svg)](https://www.npmjs.org/package/@codemirror/closebrackets) | [**WEBSITE**](https://codemirror.net/6/) | [**DOCS**](https://codemirror.net/6/docs/ref/#closebrackets) | [**ISSUES**](https://github.com/codemirror/codemirror.next/issues) | [**FORUM**](https://discuss.codemirror.net/c/next/) | [**CHANGELOG**](https://github.com/codemirror/closebrackets/blob/main/CHANGELOG.md) ]
+[ [**WEBSITE**](https://codemirror.net/6/) | [**DOCS**](https://codemirror.net/6/docs/ref/#closebrackets) | [**ISSUES**](https://github.com/codemirror/codemirror.next/issues) | [**FORUM**](https://discuss.codemirror.net/c/next/) | [**CHANGELOG**](https://github.com/codemirror/closebrackets/blob/main/CHANGELOG.md) ]
 
-This package implements Automatic bracket closing for the
+This package implements automatic bracket closing for the
 [CodeMirror](https://codemirror.net/6/) code editor.
 
 The [project page](https://codemirror.net/6/) has more information, a
