@@ -1,5 +1,5 @@
 import ist from "ist"
-import {handleInsertion, deleteBracketPair, closeBrackets} from "@codemirror/closebrackets"
+import {insertBracket, deleteBracketPair, closeBrackets} from "@codemirror/closebrackets"
 import {EditorState, EditorSelection, StateCommand} from "@codemirror/state"
 import {StreamLanguage} from "@codemirror/stream-parser"
 
@@ -22,7 +22,7 @@ function canApp(s: EditorState, cmd: StateCommand) {
 }
 
 function ins(s: EditorState, value: string) {
-  let result = handleInsertion(s, value)
+  let result = insertBracket(s, value)
   return result ? result.state : s
 }
 
@@ -43,9 +43,9 @@ describe("closeBrackets", () => {
   })
 
   it("doesn't close brackets before regular chars", () => {
-    ist(!handleInsertion(s("foo bar", 4), "("))
-    ist(!handleInsertion(s("foo bar", 5), "["))
-    ist(!handleInsertion(s("*"), "{"))
+    ist(!insertBracket(s("foo bar", 4), "("))
+    ist(!insertBracket(s("foo bar", 5), "["))
+    ist(!insertBracket(s("*"), "{"))
   })
 
   it("closes brackets before allowed chars", () => {
@@ -68,7 +68,7 @@ describe("closeBrackets", () => {
   })
 
   it("doesn't skip when the next char doesn't match", () => {
-    ist(!handleInsertion(s("(a)", 1, 2), "]"))
+    ist(!insertBracket(s("(a)", 1, 2), "]"))
   })
 
   it("closes quotes", () => {
@@ -82,9 +82,9 @@ describe("closeBrackets", () => {
   })
 
   it("doesn't close quotes in words", () => {
-    ist(!handleInsertion(s("ab", 1), "'"))
-    ist(!handleInsertion(s("ab", 2), "'"))
-    ist(!handleInsertion(s("ab", 0), "'"))
+    ist(!insertBracket(s("ab", 1), "'"))
+    ist(!insertBracket(s("ab", 2), "'"))
+    ist(!insertBracket(s("ab", 0), "'"))
   })
 
   const syntax = StreamLanguage.define({
@@ -147,7 +147,7 @@ describe("closeBrackets", () => {
     let state = ins(s("one\ntwo", 7), "(")
     state = state.update({selection: {anchor: 0}}).state
     state = state.update({selection: {anchor: 8}}).state
-    ist(!handleInsertion(state, ")"))
+    ist(!insertBracket(state, ")"))
   })
 
   it("doesn't clear state for changes on different lines", () => {
