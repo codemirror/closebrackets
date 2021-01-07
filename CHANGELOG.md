@@ -1,3 +1,9 @@
+## 0.17.2 (2021-01-07)
+
+### New features
+
+A new export `insertBracket` can be used to directly invoke the bracket-closing behavior when necessary.
+
 ## 0.17.1 (2021-01-06)
 
 ### New features
