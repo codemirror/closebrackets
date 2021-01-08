@@ -5,3 +5,5 @@
 @closeBracketsKeymap
 
 @deleteBracketPair
+
+@insertBracket
