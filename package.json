@@ -3,7 +3,7 @@
   "version": "0.18.0",
   "description": "Automatic bracket closing for the CodeMirror code editor",
   "scripts": {
-    "test": "mocha test/test-*.js",
+    "test": "cm-runtests",
     "prepare": "cm-buildhelper src/closebrackets.ts"
   },
   "keywords": [
@@ -33,11 +33,8 @@
     "@codemirror/view": "^0.18.0"
   },
   "devDependencies": {
-    "@codemirror/buildhelper": "^0.1.0",
-    "@codemirror/stream-parser": "^0.18.0",
-    "@types/mocha": "^5.2.0",
-    "ist": "^1.1.6",
-    "mocha": "^7.1.1"
+    "@codemirror/buildhelper": "^0.1.5",
+    "@codemirror/stream-parser": "^0.18.0"
   },
   "repository": {
     "type": "git",
