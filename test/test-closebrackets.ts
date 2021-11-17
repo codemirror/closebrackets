@@ -85,6 +85,8 @@ describe("closeBrackets", () => {
     ist(!insertBracket(s("ab", 1), "'"))
     ist(!insertBracket(s("ab", 2), "'"))
     ist(!insertBracket(s("ab", 0), "'"))
+    ist(!insertBracket(s("'ab", 3), "'"));
+    ist(!insertBracket(s("'ab!", 4), "'"));
   })
 
   const syntax = StreamLanguage.define({

@@ -213,7 +213,7 @@ function handleSame(state: EditorState, token: string, allowTriple: boolean) {
               range: EditorSelection.cursor(pos + token.length)}
     } else if (state.charCategorizer(pos)(next) != CharCategory.Word) {
       let prev = state.sliceDoc(pos - 1, pos)
-      if (prev != token && state.charCategorizer(pos)(prev) != CharCategory.Word)
+      if (prev != token && state.charCategorizer(pos)(prev) == CharCategory.Space)
         return {changes: {insert: token + token, from: pos},
                 effects: closeBracketEffect.of(pos + token.length),
                 range: EditorSelection.cursor(pos + token.length)}
