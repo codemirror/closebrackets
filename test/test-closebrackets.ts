@@ -123,6 +123,11 @@ describe("closeBrackets", () => {
     same(ins(st("foo ''", 4), "'"), st("foo ''''", 5))
   })
 
+  it("detects likely strings when closing quotes", () => {
+    same(ins(st("hey!", 4), "'"), st("hey!''", 5))
+    same(ins(st("'hey!", 5), "'"), st("'hey!", 5))
+  })
+
   it("backspaces out pairs of brackets", () => {
     same(app(st("()", 1), deleteBracketPair), st(""))
     same(app(st("okay ''", 6), deleteBracketPair), st("okay ", 5))
