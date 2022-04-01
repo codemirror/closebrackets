@@ -1,3 +1,9 @@
+## 0.19.2 (2022-04-01)
+
+### Bug fixes
+
+Remove quote characters from the default set of characters before which brackets are closed.
+
 ## 0.19.1 (2022-02-17)
 
 ### Bug fixes
